@@ -5,13 +5,13 @@ $("header .fa-grip-lines").on("click", function () {
     $("#topBar").slideToggle(250);
 });
 
-$(".imageInfo .fa-grip-lines").on("click", function () {
-    $(".imageInfo div").slideToggle(250);
+$("#imageInfo .fa-grip-lines").on("click", function () {
+    $("#imageInfo div").slideToggle(250);
 });
 
 $("#tagsBtn").on("click", function () {
     if ($("#favoritesDiv").is(":visible") === true) {
-        $("#favoritesDiv").animate({ width: 'toggle' }, 250);
+        $("#favoritesDiv").animate({ width: "toggle" }, 250);
     }
 
     $("#tagsDiv").animate({ width: 'toggle' }, 1000);
@@ -28,7 +28,7 @@ $("#favoritesBtn").on("click", function () {
 $("#tagsDiv").mousedown(function (e) {
     if (parseInt($("#tagsDiv").css("width")) === parseInt($("#tagsDiv").css("max-width"))) {
         var initialPos = e.clientX;
-        var maxWidth = parseInt($("#tagsDiv").css("max-width"));
+        var maxWidth = $("#tagsDiv")[0].scrollWidth - 405;
         var currPos;
         var mouseInterval;
 
@@ -60,7 +60,7 @@ $("#tagsDiv").mousedown(function (e) {
 $("#favoritesDiv").mousedown(function (e) {
     if (parseInt($("#favoritesDiv").css("width")) === parseInt($("#favoritesDiv").css("max-width"))) {
         var initialPos = e.clientX;
-        var maxWidth = parseInt($("#favoritesDiv").css("max-width"));
+        var maxWidth = $("#favoritesDiv")[0].scrollWidth - 405;
         var currPos;
         var mouseInterval;
 
@@ -73,12 +73,12 @@ $("#favoritesDiv").mousedown(function (e) {
                 if (favsScroll + 5 <= maxWidth) {
                     favsScroll += 5;
                 }
-                $("#tagsDiv").scrollLeft(favsScroll);
-            } else if (currentPos < initilPos) {
+                $("#favoritesDiv").scrollLeft(favsScroll);
+            } else if (currPos < initialPos) {
                 if (favsScroll - 5 >= 0) {
                     favsScroll -= 5;
                 }
-                $("#tagsDiv").scrollLeft(favsScroll);
+                $("#favoritesDiv").scrollLeft(favsScroll);
             }
         }, 20);
 

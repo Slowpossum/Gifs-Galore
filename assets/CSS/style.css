@@ -44,32 +44,6 @@ p {
 
 
 /* ---CLASSES--- */
-.imageWindow {
-    border-radius: 15px;
-    border: 5px solid #414250;
-    width: 1000px;
-    height: 500px;
-    margin: 20px auto 10px auto;
-    position: relative;
-}
-
-.imageInfo {
-    border-radius: 15px;
-    background-color: #414250;
-    width: 600px;
-    margin: 0px auto 70px auto;
-}
-
-.imageInfo div {
-    display: none;
-}
-
-.imageInfo div p {
-    text-align: left;
-    font-size: 15px;
-    line-height: 30px;
-}
-
 .center {
     text-align: center;
 }
@@ -92,6 +66,20 @@ p {
     margin: 0;
 }
 
+.tag {
+    border: none;
+    border-radius: 18px;
+    height: 35px;
+    margin: 2.5px 2.5px 0px 2.5px;
+    padding: 0px 5px;
+    font-family: Montserrat;
+    font-weight: 900;
+    color: white;
+    background-color: #9992bc;
+    user-select: none;
+    outline: none;
+}
+
 
 
 
@@ -106,7 +94,7 @@ p {
 }
 
 #tagsDiv, #favoritesDiv {
-    display: none;
+    display: flex;
     background-color: white;
     border-radius: 15px;
     overflow: hidden;
@@ -134,16 +122,38 @@ p {
     bottom: 0;
 }
 
-#tag {
-    border: none;
-    border-radius: 18px;
-    height: 35px;
-    margin-top: 2.5px;
-    padding: 0px 5px;
-    font-family: Montserrat;
-    font-weight: 900;
-    color: white;
-    background-color: #9992bc;
-    user-select: none;
-    outline: none;
+#imageWindow {
+    display: flex;
+    border-radius: 15px;
+    border: 5px solid #414250;
+    width: 1000px;
+    height: 500px;
+    margin: 20px auto 10px auto;
+    position: relative;
+}
+
+#images {
+    display: flex;
+    max-height: 100%;
+    margin: 0 auto;
+    align-items: center;
+    white-space: nowrap;
+    overflow-y: hidden;
+}
+
+#imageInfo {
+    border-radius: 15px;
+    background-color: #414250;
+    width: 600px;
+    margin: 0px auto 70px auto;
+}
+
+#imageInfo div {
+    display: none;
+}
+
+#imageInfo div p {
+    text-align: left;
+    font-size: 15px;
+    line-height: 30px;
 }
