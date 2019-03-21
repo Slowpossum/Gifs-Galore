@@ -1,0 +1,149 @@
+/* ---FONTS--- */
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One|Montserrat');
+
+
+
+
+/* ---ELEMENTS--- */
+body {
+    background-color: #2d2b31;
+    margin: 0;
+}
+
+header {
+    background-color: #414250;
+    
+    width: 100%;
+    padding-top: 10px;
+}
+
+footer {
+    background-color: #414250;
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    border-top: 10px solid #2d2b31;
+}
+
+h1 {
+    font-family: 'Julius Sans One';
+    font-size: 70px;
+    color: white;
+    margin: 0;
+}
+
+p {
+    font-family: Montserrat;
+    color: white;
+    margin: 0px 10px;
+    line-height: 50px;
+}
+
+
+
+
+/* ---CLASSES--- */
+.imageWindow {
+    border-radius: 15px;
+    border: 5px solid #414250;
+    width: 1000px;
+    height: 500px;
+    margin: 20px auto 10px auto;
+    position: relative;
+}
+
+.imageInfo {
+    border-radius: 15px;
+    background-color: #414250;
+    width: 600px;
+    margin: 0px auto 70px auto;
+}
+
+.imageInfo div {
+    display: none;
+}
+
+.imageInfo div p {
+    text-align: left;
+    font-size: 15px;
+    line-height: 30px;
+}
+
+.center {
+    text-align: center;
+}
+
+.fa-grip-lines {
+    color: white;
+}
+
+.float {
+    float: left;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.noMargin {
+    margin: 0;
+}
+
+
+
+
+/* ---IDS--- */
+#topBar {
+    display: flex;
+    background-color: #2d2b31;
+    border-radius: 15px 15px 0px 0px;
+    width: 1200px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+#tagsDiv, #favoritesDiv {
+    display: none;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0px 5px;
+    height: 40px;
+    min-width: 0px;
+    max-width: 400px;
+    margin: 5px 0px;
+    user-select: none;
+}
+
+#favoritesBtn {
+    margin-left: 50px;
+}
+
+#likeBtn {
+    background-color: #414250;
+    border-radius: 0px 15px 0px 0px;
+    padding: 7px 0px 5px 5px;
+    height: 30px;
+    width: 40px;
+    color: white;
+    position: absolute;
+    bottom: 0;
+}
+
+#tag {
+    border: none;
+    border-radius: 18px;
+    height: 35px;
+    margin-top: 2.5px;
+    padding: 0px 5px;
+    font-family: Montserrat;
+    font-weight: 900;
+    color: white;
+    background-color: #9992bc;
+    user-select: none;
+    outline: none;
+}
