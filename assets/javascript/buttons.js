@@ -1,6 +1,7 @@
 var tagsScroll = 0;
 var favsScroll = 0;
 
+//Button to expand/retract top bar holding the tags div and favorites div.
 $("header .fa-grip-lines").on("click", function () {
     if ($("#tagsHolder").is(":visible")) {
         $("#tagsHolder").animate({ width: "toggle" }, 250);
@@ -20,10 +21,12 @@ $("header .fa-grip-lines").on("click", function () {
     $("#topBar").slideToggle(250);
 });
 
+//Button to expand/retract image info pane.
 $("#imageInfo .fa-grip-lines").on("click", function () {
     $("#imageInfo div").slideToggle(250);
 });
 
+//Button to expand/retract tags div. Also retracts favorites div if it is open.
 $("#tagsBtn").on("click", function () {
     if ($("#favoritesDiv").is(":visible")) {
         $("#favoritesDiv").animate({ width: "toggle" }, 250);
@@ -40,6 +43,7 @@ $("#tagsBtn").on("click", function () {
     $("#tagsHolder").animate({ width: 'toggle' }, 250);
 });
 
+//Button to expand/retract favorites div. Also retracts tags div if it is open.
 $("#favoritesBtn").on("click", function () {
     if ($("#tagsDiv").is(":visible")) {
         $("#tagsHolder").animate({ width: 'toggle' }, 250);
@@ -56,6 +60,11 @@ $("#favoritesBtn").on("click", function () {
     $("#favoritesDiv").animate({ width: 'toggle' }, 250);
 });
 
+//Function to scroll tags div if it is overfull. Basically, sets position of initial click using event handler of tagsDiv,
+//then creates event handler for document to update on mouse movement and stores position in currPos. Following that an interval is
+//set to check the current position of the mouse versus the initial position. If current > initial, it scrolls to the right, else it scrolls
+//to the left. During the interval a mouseup function is set on the document which clears the interval and unbinds the previous mousemove
+//event, allowing for the clutter to be cleaned up after the function completes fully.
 $("#tagsDiv").mousedown(function (e) {
     if (parseInt($("#tagsDiv").css("width")) === parseInt($("#tagsDiv").css("max-width"))) {
         var initialPos = e.clientX;
@@ -88,6 +97,7 @@ $("#tagsDiv").mousedown(function (e) {
     }
 });
 
+//Does the same as previous function, but for favorites.
 $("#favoritesDiv").mousedown(function (e) {
     if (parseInt($("#favoritesDiv").css("width")) === parseInt($("#favoritesDiv").css("max-width"))) {
         var initialPos = e.clientX;
@@ -120,6 +130,7 @@ $("#favoritesDiv").mousedown(function (e) {
     }
 });
 
+//Moves imagePosition one position to left and updates image
 $("#arrowLeft").on("click", function () {
     if (imagePosition > 0) {
         imagePosition--;
@@ -128,6 +139,7 @@ $("#arrowLeft").on("click", function () {
     updateImages();
 });
 
+//Moves imagePosition one position to left and updates image
 $("#arrowRight").on("click", function () {
     if (imagePosition < images.list.length - 1) {
         imagePosition++;
@@ -136,6 +148,10 @@ $("#arrowRight").on("click", function () {
     updateImages();
 });
 
+//Adds/removes current image from favorites. If there are images currently loaded, it checks whether the current image is
+//within favorites already. If it is, then it removes the corresponding button, decreases the length of favorites, removes
+//the image from the favorites object, removes it from the list within favorites, updates the local storage to reflect the change,
+//and switches the favorites heart to be unfavorited. If it is not within favorites already, it does the opposite.
 $("#likeBtn").on("click", function () {
     var currentImage = images[images.list[imagePosition]];
 
@@ -165,6 +181,7 @@ $("#likeBtn").on("click", function () {
     }
 });
 
+//Button to show the input field to add tags.
 $("#addBtn").on("click", function () {
     if ($("#deleteForm").is(":visible")) {
         $("#deleteForm").animate({ width: "toggle" }, 250);
@@ -174,6 +191,7 @@ $("#addBtn").on("click", function () {
     $("#addForm").animate({ width: "toggle" }, 250);
 });
 
+//Button to show the input field to delete tags.
 $("#deleteBtn").on("click", function () {
     if ($("#addForm").is(":visible")) {
         $("#addForm").animate({ width: "toggle" }, 250);
@@ -183,6 +201,8 @@ $("#deleteBtn").on("click", function () {
     $("#deleteForm").animate({ width: "toggle" }, 250);
 });
 
+//On submit event for adding tags. When data is sent, if the data is non-empty, it creates a tag using the data, pushes
+//the name of the tag to the list, empties the input field, and updates the local storage to reflect the new tag array.
 $("#addForm").on("submit", function (e) {
     e.preventDefault();
     var tagToAdd = $("#addInput").val().trim();
@@ -196,6 +216,7 @@ $("#addForm").on("submit", function (e) {
     }
 });
 
+//On submit even for deleting tags. Does the opposite of the previous.
 $("#deleteForm").on("submit", function (e) {
     e.preventDefault();
     var tagToDelete = $("#deleteInput").val().trim();
@@ -209,6 +230,7 @@ $("#deleteForm").on("submit", function (e) {
     }
 });
 
+//Clears all current images and resets all related variables.
 $("#clearBtn").on("click", function () {
     $("#images").empty();
     images = {
@@ -227,12 +249,14 @@ $("#clearBtn").on("click", function () {
     }
 });
 
+//Hover event for info in top left corner. Shows/hides info pane when "i" is hovered over.
 $(".fa-info-circle").hover(function () {
     $("#infoPane").toggleClass("hide");
 }, function () {
     $("#infoPane").toggleClass("hide");
 });
 
+//Function to clear inputs.
 function clearInputs() {
     $("#addInput").val("");
     $("#deleteInput").val("");

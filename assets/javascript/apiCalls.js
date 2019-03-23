@@ -21,6 +21,9 @@ if (favorites.length > 0) {
     });
 }
 
+//On click event for tags within the tag div element on in the top bar. When a tag is clicked a query is made to the gify API,
+//which returns 5 images of the tag, adds them to the image object by URL along with relevant meta data, adds them to the image list,
+//and finally appends them to the list of images in the image frame before updating the frame.
 $("#tagsDiv").on("click", ".tag", function () {
     var tag = $(this).val();
     if (images.offset[tag] === undefined) {
@@ -50,8 +53,11 @@ $("#tagsDiv").on("click", ".tag", function () {
     });
 });
 
+//On click event for favorites div. Checks if the clicked button is within the current set of images, and if it is sets the imagePosition
+//value equal to its location, and updates the image container to show the image. If it is not, then it appends it onto the end of the images
+//object along with any relevant information contained within favorites, sets the imagePosition to the location of the new image, and updates
+//the image container.
 $("#favoritesDiv").on("click", ".favorite", function () {
-    // images.list.push($(this).val());
     if (images.hasOwnProperty($(this).val())) {
         imagePosition = images.list.indexOf($(this).val());
         updateImages();
@@ -70,6 +76,7 @@ $("#favoritesDiv").on("click", ".favorite", function () {
 //  FUNCTIONS
 //
 //
+//Creates a new tag button and appends it to the tags div.
 function createTag(tag) {
     var btn = $('<button>').text(tag);
     btn.attr("value", tag);
@@ -78,6 +85,7 @@ function createTag(tag) {
     $("#tagsDiv").append(btn);
 }
 
+//Creates a new favorite button and appends it to the favorites div.
 function createFavorite(favorite) {
     var btn = $('<button>').text(favorite.title);
     btn.attr("value", favorite.original);
@@ -86,6 +94,9 @@ function createFavorite(favorite) {
     $("#favoritesDiv").append(btn);
 }
 
+//Updates image along with arrows to shift through the image list to reflect the position within the list. Also
+//sets state of favorite heart depending on if current image is within favorites list, and finally runs function
+//to update info pane.
 function updateImages() {
     if (imagePosition === "empty") {
         imagePosition = 0;
@@ -122,6 +133,7 @@ function updateImages() {
     updateInfo();
 }
 
+//Updates info pane to reflect relevent meta data from current image.
 function updateInfo() {
     var title = $("<p>");
     var rating = $("<p>");
