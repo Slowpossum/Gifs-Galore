@@ -14,12 +14,12 @@ $("#tagsBtn").on("click", function () {
         $("#favoritesDiv").animate({ width: "toggle" }, 250);
     }
 
-    $("#tagsDiv").animate({ width: 'toggle' }, 1000);
+    $("#tagsHolder").animate({ width: 'toggle' }, 1000);
 });
 
 $("#favoritesBtn").on("click", function () {
     if ($("#tagsDiv").is(":visible") === true) {
-        $("#tagsDiv").animate({ width: 'toggle' }, 250);
+        $("#tagsHolder").animate({ width: 'toggle' }, 250);
     }
 
     $("#favoritesDiv").animate({ width: 'toggle' }, 250);
@@ -87,4 +87,40 @@ $("#favoritesDiv").mousedown(function (e) {
             $(document).unbind("mousemove");
         });
     }
+});
+
+$("#arrowLeft").on("click", function () {
+    if (imagePosition > 0) {
+        imagePosition--;
+
+        if (imagePosition === 0 && !$("#arrowLeft").hasClass("hide")) {
+            $("#arrowLeft").toggleClass("hide");
+        }
+    }
+
+    updateImages();
+});
+
+$("#arrowRight").on("click", function () {
+    if (imagePosition < images.list.length - 1) {
+        imagePosition++;
+
+        if (imagePosition === images.list.length - 1 && !$("#arrowRight").hasClass("hide")) {
+            $("#arrowRight").toggleClass("hide");
+        }
+    }
+
+    updateImages();
+});
+
+$("#likeBtn").on("click", function () {
+    // like something
+});
+
+$("#addTag").on("click", function () {
+
+});
+
+$("#deleteTag").on("click", function () {
+
 });

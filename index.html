@@ -15,22 +15,24 @@
 
 <body>
     <header class="center">
-        <h1>GIFs Galore</h1>
+        <div class="clearfix title">
+            <h1 class="float">GIFs Gal</h1>
+            <img src="./assets/images/giphyLogo.png" class="float logo"></img>
+            <h1 class="float">re</h1>
+        </div>
+
 
         <i class="fa-2x fas fa-grip-lines"></i>
         <div id="topBar" style="display: none">
             <p id="tagsBtn"><i class="fas fa-tags"></i> Tags</p>
-            <div id="tagsDiv" style="display: none">
-                <button class="tag">test button</button>
-                <button class="tag">test button</button>
-                <button class="tag">test button</button>
-                <button class="tag">test button</button>
-                <button class="tag">test button</button>
-                <button class="tag">test button</button>
-                <button class="tag">test button</button>
-                <button class="tag">test button</button>
-                <!-- tags go here -->
+            <div id="tagsHolder" style="display: none">
+                <div id="tagsDiv">
+                    <!-- tags go here -->
+                </div>
+                <button id="addTag">add</button>
+                <button id="deleteTag">delete</button>
             </div>
+
 
             <p id="favoritesBtn"><i class="fas fa-heart"></i> Favorites</p>
             <div id="favoritesDiv" style="display: none">
@@ -40,9 +42,13 @@
     </header>
 
     <div id="imageWindow">
+        <img id="arrowLeft" class="arrow hide" src="./assets/images/arrowLeft.png"></img>
         <div id="images">
+
+
             <!-- images go here -->
         </div>
+        <img id="arrowRight" class="arrow hide" src="./assets/images/arrowRight.png"></img>
 
         <i id="likeBtn" class="fa-2x far fa-heart"></i>
     </div>
@@ -52,7 +58,7 @@
         <div>
             <p><b>Title:</b> </p>
             <p><b>Rating:</b> </p>
-            <p><b>Tags:</b> </p>
+            <p><b>Original:</b> </p>
         </div>
     </div>
 

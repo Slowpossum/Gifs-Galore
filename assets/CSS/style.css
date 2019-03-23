@@ -40,16 +40,25 @@ p {
     line-height: 50px;
 }
 
+a {
+    color: white;
+}
+
 
 
 
 /* ---CLASSES--- */
+.hide {
+    display: none;
+}
+
 .center {
     text-align: center;
 }
 
 .fa-grip-lines {
     color: white;
+    display: block;
 }
 
 .float {
@@ -80,6 +89,26 @@ p {
     outline: none;
 }
 
+.arrow {
+    position: absolute;
+    height: 80%;
+    width: 8%;
+    top: 10%;
+    margin: 0px 10px;
+    opacity: .3;
+}
+
+.arrow:hover {
+    opacity: .5;
+}
+
+.logo {
+    height: 70px;
+}
+
+.title {
+    display: inline-block;
+}
 
 
 
@@ -156,4 +185,38 @@ p {
     text-align: left;
     font-size: 15px;
     line-height: 30px;
+}
+
+#arrowRight {
+    right: 0;
+}
+
+#addTag {
+    border: none;
+    border-radius: 18px;
+    font-family: "Montserrat";
+    font-weight: 900;
+    height: 35px;
+    margin: 7px 5px 0px 5px;
+    background-color: #67e359;
+    color: white;
+    outline: none;
+    user-select: none;
+}
+
+#deleteTag {
+    border: none;
+    border-radius: 18px;
+    font-family: "Montserrat";
+    font-weight: 900;
+    height: 35px;
+    margin: 7px 5px 0px 0px;
+    background-color: #e25a5e;
+    color: white;
+    outline: none;
+    user-select: none;
+}
+
+#tagsHolder {
+    display: flex;
 }
