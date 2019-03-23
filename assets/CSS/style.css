@@ -53,6 +53,13 @@ h6 {
     font-size: 10px;
 }
 
+h5 {
+    font-family: Montserrat;
+    color: white;
+    margin: 0px 0px 3px 0px;
+    font-size: 13px;
+}
+
 
 
 
@@ -68,6 +75,19 @@ h6 {
 .fa-grip-lines {
     color: white;
     display: block;
+}
+
+.fa-info-circle {
+    position: absolute;
+    margin: 10px 0px 0px 10px;
+    left: 0;
+    top: 0;
+    opacity: .3;
+    color: white;
+}
+
+.fa-info-circle:hover {
+    opacity: .6;
 }
 
 .float {
@@ -238,6 +258,7 @@ h6 {
     border: none;
     border-radius: 18px;
     height: 25px;
+    width: 150px;
     margin-top: 1px;
     padding-left: 8px;
     font-family: "Montserrat";
@@ -250,4 +271,16 @@ h6 {
     font-weight: 900;
     font-size: 20px;
     line-height: 30px;
+}
+
+#infoPane {
+    border-radius: 18px;
+    width: 300px;
+    height: 150px;
+    background-color: #141418;
+    position: absolute;
+    z-index: 3;
+    top: 40px;
+    left: 40px;
+    opacity: .8;
 }

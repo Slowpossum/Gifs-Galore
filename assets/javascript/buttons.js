@@ -227,6 +227,12 @@ $("#clearBtn").on("click", function () {
     }
 });
 
+$(".fa-info-circle").hover(function () {
+    $("#infoPane").toggleClass("hide");
+}, function () {
+    $("#infoPane").toggleClass("hide");
+});
+
 function clearInputs() {
     $("#addInput").val("");
     $("#deleteInput").val("");
