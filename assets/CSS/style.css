@@ -18,8 +18,10 @@ header {
 }
 
 footer {
+    display: flex;
+    justify-content: center;
     background-color: #414250;
-    height: 40px;
+    height: 60px;
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -42,6 +44,13 @@ p {
 
 a {
     color: white;
+}
+
+h6 {
+    font-family: Montserrat;
+    color: #a4a5b5;
+    margin-top: 45px;
+    font-size: 10px;
 }
 
 
@@ -75,7 +84,7 @@ a {
     margin: 0;
 }
 
-.tag {
+.tag, .favorite {
     border: none;
     border-radius: 18px;
     height: 35px;
@@ -87,6 +96,10 @@ a {
     background-color: #9992bc;
     user-select: none;
     outline: none;
+}
+
+.favorite {
+    background-color: #a4ee9b;
 }
 
 .arrow {
@@ -140,7 +153,7 @@ a {
     margin-left: 50px;
 }
 
-#likeBtn {
+#likeBtn, #clearBtn {
     background-color: #414250;
     border-radius: 0px 15px 0px 0px;
     padding: 7px 0px 5px 5px;
@@ -149,6 +162,14 @@ a {
     color: white;
     position: absolute;
     bottom: 0;
+}
+
+#clearBtn {
+    border-radius: 0px 0px 0px 15px;
+    padding: 0px 0px 7px 10px;
+    width: 30px;
+    top: 0;
+    right: 0;
 }
 
 #imageWindow {
@@ -191,7 +212,7 @@ a {
     right: 0;
 }
 
-#addTag {
+#addTag, #deleteTag {
     border: none;
     border-radius: 18px;
     font-family: "Montserrat";
@@ -205,18 +226,28 @@ a {
 }
 
 #deleteTag {
-    border: none;
-    border-radius: 18px;
-    font-family: "Montserrat";
-    font-weight: 900;
-    height: 35px;
-    margin: 7px 5px 0px 0px;
     background-color: #e25a5e;
-    color: white;
-    outline: none;
-    user-select: none;
 }
 
 #tagsHolder {
     display: flex;
+}
+
+#addInput, #deleteInput {
+    outline: none;
+    border: none;
+    border-radius: 18px;
+    height: 25px;
+    margin-top: 1px;
+    padding-left: 8px;
+    font-family: "Montserrat";
+    font-weight: 900;
+    font-size: 20px;
+}
+
+#addBtn, #deleteBtn {
+    font-family: "Montserrat";
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 30px;
 }

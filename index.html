@@ -17,7 +17,7 @@
     <header class="center">
         <div class="clearfix title">
             <h1 class="float">GIFs Gal</h1>
-            <img src="./assets/images/giphyLogo.png" class="float logo"></img>
+            <img src="./assets/images/giphyLogo.png" class="float logo">
             <h1 class="float">re</h1>
         </div>
 
@@ -29,12 +29,24 @@
                 <div id="tagsDiv">
                     <!-- tags go here -->
                 </div>
-                <button id="addTag">add</button>
-                <button id="deleteTag">delete</button>
+
+                <button id="addTag">
+                    <p id="addBtn" class="float">add </p>
+                    <form id="addForm" class="float" style="display: none">
+                        <input type="text" id="addInput">
+                    </form>
+                </button>
+
+                <button id="deleteTag">
+                    <p id="deleteBtn" class="float">delete </p>
+                    <form id="deleteForm" class="float" style="display: none">
+                        <input type="text" id="deleteInput">
+                    </form>
+                </button>
             </div>
 
 
-            <p id="favoritesBtn"><i class="fas fa-heart"></i> Favorites</p>
+            <p id="favoritesBtn"><i class="fas fa-heart"></i></i> Favorites</p>
             <div id="favoritesDiv" style="display: none">
                 <!-- favorites go here -->
             </div>
@@ -42,13 +54,13 @@
     </header>
 
     <div id="imageWindow">
-        <img id="arrowLeft" class="arrow hide" src="./assets/images/arrowLeft.png"></img>
+        <i id="clearBtn" class="fa-2x fas fa-times"></i>
+
+        <img id="arrowLeft" class="arrow hide" src="./assets/images/arrowLeft.png">
         <div id="images">
-
-
             <!-- images go here -->
         </div>
-        <img id="arrowRight" class="arrow hide" src="./assets/images/arrowRight.png"></img>
+        <img id="arrowRight" class="arrow hide" src="./assets/images/arrowRight.png">
 
         <i id="likeBtn" class="fa-2x far fa-heart"></i>
     </div>
@@ -62,8 +74,11 @@
         </div>
     </div>
 
-    <footer class="center">
-        <!-- footer -->
+
+
+    <footer>
+        <h6>S l o w p o s s u m</h6>
+        <img src="./assets/images/opossum.png" width="80" height="40" style="margin: 20px 0px 0px 10px">
     </footer>
 </body>
 
